@@ -1,0 +1,39 @@
+#pragma once
+#include <Adafruit_NeoPixel.h> // подключаем библиотеку
+#include <Arduino.h>
+#include "ws2812.h"
+#include "main.h"
+
+//  создаем объект strip с нужными характеристиками
+//Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+strip.begin();            // инициализируем ленту
+strip.setBrightness(220); // указываем яркость светодиодов (максимум 255)
+{
+  for (int i = 0; i <= 6; i++)
+  {
+    RV = MyArray[i * 9];
+    GV = MyArray[i * 9 + 1];
+    BV = MyArray[i * 9 + 2];
+    RN = MyArray[i * 9 + 3];
+    GN = MyArray[i * 9 + 4];
+    BN = MyArray[i * 9 + 5];
+    RD = MyArray[i * 9 + 6];
+    GD = MyArray[i * 9 + 7];
+    BD = MyArray[i * 9 + 8];
+    for (int i = -1; i < 31; i++)
+    {
+      strip.setPixelColor(i, strip.Color(RV, GV, BV)); // Down
+      // strip.show();
+    }
+    for (int i = -1; i < 12; i++)
+    {
+      strip.setPixelColor(i, strip.Color(RD, GD, BD));
+      // strip.show();
+    }
+    for (int i = -1; i < 8; i++)
+    {
+      strip.setPixelColor(i, strip.Color(RN, GN, BN));
+      strip.show();
+    }
+  }
+}
