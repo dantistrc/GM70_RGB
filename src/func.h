@@ -19,9 +19,9 @@ void miglong(){
 void functions(){
     if (!TuneCurrent_flag && !Bright_flag)
     {
-        switch (btn1.click())
+        switch (btn1.click())       // 1/left knob short press!!!!!!!!!!!!!!!
         {
-        case 1:
+        case 1:     //short press
             tempcolor = designcolor; // Save color to Temp
             if (!FB_flag)
             {
@@ -38,7 +38,7 @@ void functions(){
             break;
             //-------------------YES / NO FEED BACK--------------------------------
 
-        case 2:                      // FeedBack route
+        case 2:                      // FeedBack route        (1/right LONG press)!!!!!!!!!!!!!!!!!!!!!
             tempcolor = designcolor; // Save color to Temp
             if (!FB_flag)
             {
